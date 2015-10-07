@@ -19,14 +19,29 @@ int main() {
     currentFibonacciNumber = 1;
     nextFibonacciNumber    = 2;
 
+    totalSum = nextFibonacciNumber;
+
     do {
 
+        int placeholderCurrent = currentFibonacciNumber;
 
+        int placeholderNext = nextFibonacciNumber;
 
+        currentFibonacciNumber = nextFibonacciNumber;
 
+        nextFibonacciNumber = placeholderCurrent + placeholderNext;
+
+        // if there's no remainder on the number then it is even
+        if ( nextFibonacciNumber % 2 == 0 ) {
+
+            totalSum += nextFibonacciNumber;
+
+        }
 
     } while (currentFibonacciNumber < 4000000);
 
+
+    cout << "The total sum of all Fibonacci numbers less than 4000000 is : " << totalSum << endl;
 
 
     return 0;
